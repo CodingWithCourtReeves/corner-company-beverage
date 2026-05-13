@@ -13,9 +13,10 @@ const { transparentAtTop = false } = Astro.props;
   ]}
 >
   <nav aria-label="Primary" class="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
-    <a href="/" class="flex items-center gap-3" aria-label="Corner Company home">
-      <Monogram class="w-10 h-10" />
-      <span class="font-display text-forest text-lg tracking-tight hidden sm:inline">Corner Company</span>
+    <a href="/" class="flex items-center gap-3">
+      <Monogram class="w-10 h-10" title="" />
+      <span class="font-display text-forest text-lg tracking-tight">Corner Company</span>
+      <span class="sr-only">home</span>
     </a>
     <ul class="flex items-center gap-6 text-sm font-medium uppercase tracking-[0.18em]">
       <li><a href="/menu" class="text-ink hover:text-forest">Menu</a></li>
