@@ -1,0 +1,56 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import MenuList from "../components/MenuList.astro";
+import SectionDivider from "../components/SectionDivider.astro";
+import { Image } from "astro:assets";
+import { menu } from "../data/menu.ts";
+import pastryTray from "../assets/photos/pastry-tray.jpg";
+import dripChalkboard from "../assets/photos/drip-chalkboard.jpg";
+
+const sectionImages: Record<string, ImageMetadata | undefined> = {
+  "coffee-tea": dripChalkboard,
+  "breakfast": pastryTray,
+};
+const sectionAlt: Record<string, string> = {
+  "coffee-tea": "Chalkboard listing today's drip coffee: Ethiopian Yirgacheffe and Congo Dark Roast.",
+  "breakfast": "Warm cheddar-bacon scone fresh from the oven on a stainless tray.",
+};
+---
+<BaseLayout title="Menu" description="Espresso, drip coffee, loose-leaf teas, house-made pastries, breakfast and lunch at Corner Company Beverage Emporium in Jonesborough, TN.">
+  <Header slot="header" />
+  <section class="pt-32 pb-16 text-center">
+    <p class="uppercase tracking-[0.3em] text-xs text-cocoa mb-4">The full menu</p>
+    <h1 class="font-display text-5xl sm:text-6xl text-forest">Today on the corner.</h1>
+    <p class="mt-6 text-ink/70 max-w-xl mx-auto px-6">
+      Pastries baked this morning. Coffee roasted in Elizabethton. Quiche from the kitchen. Everything below served at 148 E Main.
+    </p>
+  </section>
+
+  {menu.map((category, idx) => (
+    <section class:list={["py-12", idx % 2 === 0 ? "bg-cream" : "bg-paper"]} aria-labelledby={`section-${category.id}`}>
+      <div class="mx-auto max-w-5xl px-6 grid gap-10 md:grid-cols-12 items-start">
+        <div class:list={[idx % 2 === 0 ? "md:order-1" : "md:order-2", "md:col-span-7"]}>
+          <h2 id={`section-${category.id}`} class="font-display text-3xl text-forest">{category.title}</h2>
+          {category.subtitle && <p class="uppercase tracking-[0.2em] text-xs text-cocoa mt-2 mb-6">{category.subtitle}</p>}
+          <div class="mt-6">
+            <MenuList items={category.items} />
+          </div>
+        </div>
+        {sectionImages[category.id] && (
+          <figure class:list={[idx % 2 === 0 ? "md:order-2" : "md:order-1", "md:col-span-5"]}>
+            <Image src={sectionImages[category.id]!} alt={sectionAlt[category.id]} widths={[400, 800]} sizes="(min-width: 768px) 360px, 100vw" loading="lazy" class="w-full h-auto rounded-sm aspect-[3/4] object-cover" />
+          </figure>
+        )}
+      </div>
+    </section>
+  ))}
+
+  <SectionDivider />
+  <p class="mx-auto max-w-3xl px-6 pb-24 text-xs text-ink/55 leading-relaxed text-center">
+    Consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase your risk of foodborne illness, especially if you have certain medical conditions.
+  </p>
+
+  <Footer slot="footer" />
+</BaseLayout>
