@@ -91,10 +91,10 @@ jobs:
           name: v${{ env.VERSION }}
           generate_release_notes: true
 
-      - name: Install Railway CLI
-        run: npm install -g @railway/cli
-
-      - name: Deploy to Railway
-        run: railway redeploy --service corner-company --environment production --yes
-        env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+      - name: Summary
+        run: |
+          echo "### Released v$VERSION" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "Image: \`${{ env.REGISTRY }}/${{ steps.img.outputs.name }}:v$VERSION\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "To deploy this version to Railway, run the **Deploy** workflow with version \`$VERSION\` (or \`latest\`)." >> "$GITHUB_STEP_SUMMARY"
