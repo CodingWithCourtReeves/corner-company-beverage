@@ -8,8 +8,8 @@ const { items } = Astro.props;
     <li>
       <div class="menu-leader">
         <span class="name text-ink text-lg">{item.name}</span>
-        <span class="dots" aria-hidden="true"></span>
-        {item.price ? <span class="price">{item.price}</span> : <span class="price text-cocoa/60">—</span>}
+        {item.price && <span class="dots" aria-hidden="true"></span>}
+        {item.price && <span class="price">{item.price}</span>}
       </div>
       {item.description && (
         <p class="mt-1 text-sm italic text-ink/70 max-w-prose">{item.description}</p>
