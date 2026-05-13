@@ -1,0 +1,35 @@
+---
+interface Props {
+  class?: string;
+  title?: string;
+  variant?: "default" | "inverse";
+}
+const { class: className = "", title = "Corner Company Beverage Emporium monogram", variant = "default" } = Astro.props;
+const stroke = variant === "inverse" ? "#F4EFE6" : "#2F4A3A";
+const fill = variant === "inverse" ? "#F4EFE6" : "#2F4A3A";
+---
+<svg
+  viewBox="0 0 120 120"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-label={title}
+  class={className}
+>
+  <title>{title}</title>
+  <defs>
+    <path id="ribbon-arc" d="M 18 78 A 50 50 0 0 0 102 78" fill="none" />
+  </defs>
+
+  <circle cx="60" cy="60" r="56" fill="none" stroke={stroke} stroke-width="1" />
+  <circle cx="60" cy="60" r="50" fill="none" stroke={stroke} stroke-width="0.75" />
+  <circle cx="60" cy="8" r="1.5" fill={fill} />
+  <circle cx="60" cy="112" r="1.5" fill={fill} />
+
+  <text x="60" y="48" text-anchor="middle" font-family="Fraunces Variable, Fraunces, serif" font-size="34" font-weight="500" fill={fill}>C</text>
+  <text x="60" y="62" text-anchor="middle" font-family="Fraunces Variable, Fraunces, serif" font-style="italic" font-size="14" fill={fill}>&amp;</text>
+  <text x="60" y="80" text-anchor="middle" font-family="Fraunces Variable, Fraunces, serif" font-size="34" font-weight="500" fill={fill}>C</text>
+
+  <text font-family="Inter Variable, Inter, sans-serif" font-size="7" letter-spacing="2.5" fill={fill}>
+    <textPath href="#ribbon-arc" startOffset="50%" text-anchor="middle">BEVERAGE EMPORIUM</textPath>
+  </text>
+</svg>
