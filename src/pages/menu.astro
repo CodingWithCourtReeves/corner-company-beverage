@@ -8,14 +8,20 @@ import { Image } from "astro:assets";
 import { menu } from "../data/menu.ts";
 import pastryTray from "../assets/photos/pastry-tray.jpg";
 import dripChalkboard from "../assets/photos/drip-chalkboard.jpg";
+import lunchCiabatta from "../assets/photos/lunch-ciabatta.jpg";
+import pastriesPhoto from "../assets/photos/pastries.jpg";
 
 const sectionImages: Record<string, ImageMetadata | undefined> = {
   "coffee-tea": dripChalkboard,
   "breakfast": pastryTray,
+  "lunch": lunchCiabatta,
+  "pastries": pastriesPhoto,
 };
 const sectionAlt: Record<string, string> = {
-  "coffee-tea": "Chalkboard listing today's drip coffee: Ethiopian Yirgacheffe and Congo Dark Roast.",
-  "breakfast": "Warm cheddar-bacon scone fresh from the oven on a stainless tray.",
+  "coffee-tea": "Two cappuccinos with latte art held side by side over a wooden table.",
+  "breakfast": "A rustic loaf and a seeded round on a dark stone counter, dusted with grain.",
+  "lunch": "A ciabatta sandwich with butter lettuce, tomato, and provolone on a wood serving board.",
+  "pastries": "An overhead view of cinnamon rolls dusted with sugar on a dark stone surface.",
 };
 ---
 <BaseLayout title="Menu" description="Espresso, drip coffee, loose-leaf teas, house-made pastries, breakfast and lunch at Corner Company Beverage Emporium in Jonesborough, TN.">
