@@ -1,0 +1,27 @@
+---
+import { Image } from "astro:assets";
+import MenuList from "./MenuList.astro";
+import { featuredItems } from "../data/menu.ts";
+import pastryTray from "../assets/photos/pastry-tray.jpg";
+import dripChalkboard from "../assets/photos/drip-chalkboard.jpg";
+---
+<section class="bg-cream" aria-labelledby="menu-preview-heading">
+  <div class="mx-auto max-w-6xl px-6 py-24 grid gap-12 md:grid-cols-12 items-start">
+    <div class="md:col-span-7">
+      <p class="uppercase tracking-[0.3em] text-xs text-cocoa mb-4">From the menu</p>
+      <h2 id="menu-preview-heading" class="font-display text-4xl text-forest mb-10">A few favorites.</h2>
+      <MenuList items={featuredItems.slice(0, 6)} />
+      <a href="/menu" class="mt-10 inline-flex items-center gap-2 text-forest font-medium uppercase tracking-[0.18em] text-xs underline underline-offset-8 decoration-cocoa/40 hover:decoration-forest">
+        See the full menu →
+      </a>
+    </div>
+    <div class="md:col-span-5 grid grid-cols-2 gap-4 md:sticky md:top-24">
+      <figure class="rounded-sm overflow-hidden">
+        <Image src={pastryTray} alt="A warm cheddar-bacon scone resting on a stainless tray, fresh from the oven." widths={[400, 800]} sizes="(min-width: 768px) 240px, 50vw" loading="lazy" class="w-full h-full object-cover aspect-[3/4]" />
+      </figure>
+      <figure class="rounded-sm overflow-hidden mt-12">
+        <Image src={dripChalkboard} alt="A chalkboard listing today's drip coffee: Ethiopian Yirgacheffe and Congo Dark Roast." widths={[400, 800]} sizes="(min-width: 768px) 240px, 50vw" loading="lazy" class="w-full h-full object-cover aspect-[3/4]" />
+      </figure>
+    </div>
+  </div>
+</section>
