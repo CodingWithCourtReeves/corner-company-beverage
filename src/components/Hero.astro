@@ -12,9 +12,10 @@ import heroPastry from "../assets/photos/hero-pastry.jpg";
     fetchpriority="high"
     class="absolute inset-0 -z-10 h-full w-full object-cover"
   />
-  <div class="absolute inset-0 -z-10 bg-gradient-to-b from-black/40 via-black/45 to-black/75" aria-hidden="true"></div>
+  <div class="absolute inset-0 -z-10 bg-gradient-to-b from-black/30 via-black/60 to-black/80" aria-hidden="true"></div>
+  <div class="absolute inset-0 -z-10 bg-gradient-to-r from-black/55 via-black/25 to-transparent md:from-black/45 md:via-black/15" aria-hidden="true"></div>
 
-  <div class="mx-auto max-w-6xl px-6 pb-12 sm:pb-16 pt-32 text-cream">
+  <div class="mx-auto max-w-6xl px-6 pb-12 sm:pb-16 pt-32 text-cream hero-text">
     <p class="font-sans uppercase tracking-[0.3em] text-xs sm:text-sm text-cream/85 mb-4">Jonesborough, Tennessee</p>
     <h1 class="font-display text-4xl sm:text-5xl md:text-6xl leading-[1.05] max-w-3xl">
       Handcrafted coffee on <span class="italic">Tennessee's</span> oldest corner.
@@ -28,3 +29,10 @@ import heroPastry from "../assets/photos/hero-pastry.jpg";
     </div>
   </div>
 </section>
+
+<style>
+  .hero-text p,
+  .hero-text h1 {
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
+  }
+</style>
