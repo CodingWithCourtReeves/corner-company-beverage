@@ -1,6 +1,4 @@
 ---
-import { Image } from "astro:assets";
-import exterior from "../assets/photos/exterior.jpg";
 ---
 <section id="visit" class="bg-paper" aria-labelledby="visit-heading">
   <div class="mx-auto max-w-6xl px-6 py-16 grid gap-12 md:grid-cols-2 items-center">
@@ -21,19 +19,16 @@ import exterior from "../assets/photos/exterior.jpg";
         <a href="tel:+14239306575" class="inline-flex items-center gap-2 border border-forest/70 text-forest px-6 py-3 font-medium uppercase tracking-[0.18em] text-xs hover:bg-forest/5">Call ahead</a>
       </div>
     </div>
-    <figure>
-      <Image src={exterior} alt="Corner Company Beverage Emporium's brick storefront on East Main Street, with white trim and a covered porch." widths={[640, 1024, 1280]} sizes="(min-width: 768px) 50vw, 100vw" loading="lazy" class="w-full h-auto rounded-sm" />
-    </figure>
-  </div>
-  <div class="mx-auto max-w-6xl px-6 pb-16">
-    <iframe
-      title="Map showing Corner Company Beverage Emporium at 148 E Main St, Jonesborough, TN"
-      src="https://www.google.com/maps?q=148+E+Main+St+Jonesborough+TN+37659&output=embed"
-      width="100%"
-      height="320"
-      style="border:0;"
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-    ></iframe>
+    <div class="rounded-sm overflow-hidden shadow-[0_2px_12px_rgba(31,42,36,0.08)]">
+      <iframe
+        title="Map showing Corner Company Beverage Emporium at 148 E Main St, Jonesborough, TN"
+        src="https://www.google.com/maps?q=148+E+Main+St+Jonesborough+TN+37659&output=embed"
+        width="100%"
+        height="400"
+        style="border:0; display:block;"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
   </div>
 </section>
