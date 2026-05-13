@@ -7,8 +7,29 @@ import AboutStrip from "../components/AboutStrip.astro";
 import MenuPreview from "../components/MenuPreview.astro";
 import VisitSection from "../components/VisitSection.astro";
 import SocialProof from "../components/SocialProof.astro";
+import { getImage } from "astro:assets";
+import heroPastry from "../assets/photos/hero-pastry.jpg";
+
+// Generate optimized hero variants and a srcset string so the browser
+// can preload the right-sized image as soon as it parses <head>.
+const widths = [768, 1280, 1920, 2400];
+const variants = await Promise.all(
+  widths.map((w) => getImage({ src: heroPastry, width: w, format: "webp" })),
+);
+const heroSrcset = variants
+  .map((v, i) => `${v.src} ${widths[i]}w`)
+  .join(", ");
 ---
 <BaseLayout title="Corner Company Beverage Emporium">
+  <Fragment slot="head">
+    <link
+      rel="preload"
+      as="image"
+      imagesrcset={heroSrcset}
+      imagesizes="100vw"
+      fetchpriority="high"
+    />
+  </Fragment>
   <Header slot="header" transparentAtTop />
   <Hero />
   <AboutStrip />
