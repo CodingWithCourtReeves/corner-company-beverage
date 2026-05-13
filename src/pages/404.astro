@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+<BaseLayout title="Page not found">
+  <Header slot="header" />
+  <section class="min-h-[70vh] flex items-center">
+    <div class="mx-auto max-w-xl px-6 text-center">
+      <p class="uppercase tracking-[0.3em] text-xs text-cocoa mb-6">404</p>
+      <h1 class="font-display text-5xl text-forest mb-4">We can't find that page.</h1>
+      <p class="text-ink/75 mb-8">But we can pour you a coffee. Head back to the home page or check out the menu.</p>
+      <div class="flex justify-center gap-4 flex-wrap">
+        <a href="/" class="bg-forest text-cream px-6 py-3 uppercase tracking-[0.18em] text-xs">Home</a>
+        <a href="/menu" class="border border-forest/70 text-forest px-6 py-3 uppercase tracking-[0.18em] text-xs">Menu</a>
+      </div>
+    </div>
+  </section>
+  <Footer slot="footer" />
+</BaseLayout>
