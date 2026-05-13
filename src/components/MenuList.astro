@@ -1,0 +1,19 @@
+---
+import type { MenuItem } from "../data/menu.ts";
+interface Props { items: MenuItem[]; }
+const { items } = Astro.props;
+---
+<ul class="flex flex-col gap-5">
+  {items.map((item) => (
+    <li>
+      <div class="menu-leader">
+        <span class="name text-ink text-lg">{item.name}</span>
+        <span class="dots" aria-hidden="true"></span>
+        {item.price ? <span class="price">{item.price}</span> : <span class="price text-cocoa/60">—</span>}
+      </div>
+      {item.description && (
+        <p class="mt-1 text-sm italic text-ink/70 max-w-prose">{item.description}</p>
+      )}
+    </li>
+  ))}
+</ul>
