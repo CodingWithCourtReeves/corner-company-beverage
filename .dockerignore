@@ -1,0 +1,9 @@
+node_modules
+dist
+.astro
+.git
+.github
+docs
+.lighthouseci
+.DS_Store
+*.log
