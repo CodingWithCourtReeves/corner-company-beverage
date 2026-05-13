@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import heroPastry from "../assets/photos/hero-pastry.jpg";
 ---
-<section class="relative isolate min-h-[88vh] flex items-end overflow-hidden">
+<section class="relative isolate min-h-[64vh] md:min-h-[68vh] flex items-end overflow-hidden">
   <Image
     src={heroPastry}
     alt="A barista pouring water from a gooseneck kettle into a glass Chemex pour-over, steam rising."
@@ -14,15 +14,15 @@ import heroPastry from "../assets/photos/hero-pastry.jpg";
   />
   <div class="absolute inset-0 -z-10 bg-gradient-to-b from-black/40 via-black/45 to-black/75" aria-hidden="true"></div>
 
-  <div class="mx-auto max-w-6xl px-6 pb-20 sm:pb-28 text-cream">
-    <p class="font-sans uppercase tracking-[0.3em] text-xs sm:text-sm text-cream/85 mb-6">Jonesborough, Tennessee</p>
-    <h1 class="font-display text-4xl sm:text-6xl md:text-7xl leading-[1.05] max-w-3xl">
+  <div class="mx-auto max-w-6xl px-6 pb-12 sm:pb-16 pt-32 text-cream">
+    <p class="font-sans uppercase tracking-[0.3em] text-xs sm:text-sm text-cream/85 mb-4">Jonesborough, Tennessee</p>
+    <h1 class="font-display text-4xl sm:text-5xl md:text-6xl leading-[1.05] max-w-3xl">
       Handcrafted coffee on <span class="italic">Tennessee's</span> oldest corner.
     </h1>
-    <p class="mt-6 max-w-xl text-cream/90 text-lg">
+    <p class="mt-4 max-w-xl text-cream/90 text-base sm:text-lg">
       Locally roasted beans, loose-leaf teas, and house-made pastries — served slowly on the corner of Main Street since 2015.
     </p>
-    <div class="mt-10 flex flex-wrap gap-4">
+    <div class="mt-6 flex flex-wrap gap-4">
       <a href="/menu" class="inline-flex items-center gap-2 bg-cream text-forest px-6 py-3 font-medium uppercase tracking-[0.18em] text-xs hover:bg-cream/90">See the menu</a>
       <a href="#visit" class="inline-flex items-center gap-2 border border-cream/80 text-cream px-6 py-3 font-medium uppercase tracking-[0.18em] text-xs hover:bg-cream/10">Visit us</a>
     </div>

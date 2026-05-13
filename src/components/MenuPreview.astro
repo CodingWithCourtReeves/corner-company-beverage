@@ -6,12 +6,12 @@ import pastryTray from "../assets/photos/pastry-tray.jpg";
 import dripChalkboard from "../assets/photos/drip-chalkboard.jpg";
 ---
 <section class="bg-cream" aria-labelledby="menu-preview-heading">
-  <div class="mx-auto max-w-6xl px-6 py-24 grid gap-12 md:grid-cols-12 items-start">
+  <div class="mx-auto max-w-6xl px-6 py-16 grid gap-12 md:grid-cols-12 items-start">
     <div class="md:col-span-7">
       <p class="uppercase tracking-[0.3em] text-xs text-cocoa mb-4">From the menu</p>
-      <h2 id="menu-preview-heading" class="font-display text-4xl text-forest mb-10">A few favorites.</h2>
+      <h2 id="menu-preview-heading" class="font-display text-4xl text-forest mb-6">A few favorites.</h2>
       <MenuList items={featuredItems.slice(0, 6)} />
-      <a href="/menu" class="mt-10 inline-flex items-center gap-2 text-forest font-medium uppercase tracking-[0.18em] text-xs underline underline-offset-8 decoration-cocoa/40 hover:decoration-forest">
+      <a href="/menu" class="mt-8 inline-flex items-center gap-2 text-forest font-medium uppercase tracking-[0.18em] text-xs underline underline-offset-8 decoration-cocoa/40 hover:decoration-forest">
         See the full menu →
       </a>
     </div>
