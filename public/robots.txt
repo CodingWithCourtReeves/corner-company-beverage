@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://corner-company.up.railway.app/sitemap-index.xml
