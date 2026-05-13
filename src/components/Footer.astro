@@ -1,0 +1,34 @@
+---
+import Monogram from "./Monogram.astro";
+---
+<footer class="bg-forest text-cream mt-24">
+  <div class="mx-auto max-w-6xl px-6 py-16 grid gap-12 md:grid-cols-3">
+    <div class="flex flex-col gap-3">
+      <Monogram class="w-16 h-16" variant="inverse" />
+      <p class="font-display text-2xl leading-tight">Corner Company<br /><span class="italic">Beverage Emporium</span></p>
+    </div>
+    <div>
+      <h2 class="text-xs uppercase tracking-[0.2em] mb-3 text-cream/70">Visit</h2>
+      <address class="not-italic leading-relaxed">
+        148 E Main St<br />
+        Jonesborough, TN 37659<br />
+        <a href="tel:+14239306575" class="underline-offset-4 hover:underline">(423) 930-6575</a>
+      </address>
+    </div>
+    <div>
+      <h2 class="text-xs uppercase tracking-[0.2em] mb-3 text-cream/70">Hours</h2>
+      <dl class="leading-relaxed">
+        <div class="flex justify-between"><dt>Mon–Sat</dt><dd>8am – 3pm</dd></div>
+        <div class="flex justify-between"><dt>Sunday</dt><dd>8am – 1pm</dd></div>
+      </dl>
+      <h2 class="text-xs uppercase tracking-[0.2em] mt-6 mb-3 text-cream/70">Follow</h2>
+      <ul class="flex gap-4">
+        <li><a href="https://www.facebook.com/TheCornerCupCoffeeandTea/" target="_blank" rel="noopener" class="underline-offset-4 hover:underline">Facebook</a></li>
+        <li><a href="https://www.instagram.com/cornercompanyjbo/" target="_blank" rel="noopener" class="underline-offset-4 hover:underline">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-cream/15">
+    <p class="mx-auto max-w-6xl px-6 py-6 text-xs text-cream/60">© {new Date().getFullYear()} Corner Company Beverage Emporium. All rights reserved.</p>
+  </div>
+</footer>
