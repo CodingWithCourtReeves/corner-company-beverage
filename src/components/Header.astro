@@ -1,0 +1,42 @@
+---
+import Monogram from "./Monogram.astro";
+interface Props {
+  transparentAtTop?: boolean;
+}
+const { transparentAtTop = false } = Astro.props;
+---
+<header
+  data-transparent={transparentAtTop ? "true" : "false"}
+  class:list={[
+    "fixed top-0 left-0 right-0 z-40 transition-colors duration-300",
+    transparentAtTop ? "bg-transparent" : "bg-cream/95 backdrop-blur",
+  ]}
+>
+  <nav aria-label="Primary" class="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-3" aria-label="Corner Company home">
+      <Monogram class="w-10 h-10" />
+      <span class="font-display text-forest text-lg tracking-tight hidden sm:inline">Corner Company</span>
+    </a>
+    <ul class="flex items-center gap-6 text-sm font-medium uppercase tracking-[0.18em]">
+      <li><a href="/menu" class="text-ink hover:text-forest">Menu</a></li>
+      <li><a href="/#visit" class="text-ink hover:text-forest">Visit</a></li>
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const header = document.querySelector("header[data-transparent='true']");
+  if (header) {
+    const onScroll = () => {
+      if (window.scrollY > 24) {
+        header.classList.remove("bg-transparent");
+        header.classList.add("bg-cream/95", "backdrop-blur", "shadow-[0_1px_0_0_rgba(31,42,36,0.08)]");
+      } else {
+        header.classList.add("bg-transparent");
+        header.classList.remove("bg-cream/95", "backdrop-blur", "shadow-[0_1px_0_0_rgba(31,42,36,0.08)]");
+      }
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
+</script>
